@@ -1,0 +1,47 @@
+@import '~antd/dist/antd.css';
+.App {
+  display: flex;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  color: #ffffff;
+  background-color: #333c4e;
+  width: 100%;
+  box-shadow: #d6d5d5 5px 10px 15px 3px;
+}
+
+.app-logo {
+  width: 64px;
+  height: 72px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.app-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.app-link:hover {
+  color: rgb(96, 182, 96);
+}
+
+.app__search-field {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.app__search-input {
+  width: 99%;
+  height: 40px;
+  outline: none;
+  border: 0.5px solid #d6d5d5;
+  border-radius: 6px;
+  padding-left: 20px;
+  font-size: 20px;
+  box-shadow: #d6d5d5 5px 10px 15px 3px;
+}

@@ -1,0 +1,7 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  min-height: 100vh;
+  border: 0.5px solid rgb(212, 207, 207);
+}

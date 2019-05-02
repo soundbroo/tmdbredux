@@ -1,0 +1,89 @@
+.popular {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
+    margin-left: 10px;
+    margin-top: 10px;
+    /* justify-content: space-around; */
+}
+
+.popular-card {
+    display: flex;
+    border: 0.5px solid #d6d5d5;
+    border-radius: 10px;
+    padding: 5px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    box-shadow: #d6d5d5 3px 3px 5px 0px;
+}
+
+.popular-card__description {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.popular-card__description button {
+    outline: none;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.popular-date {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #8a8a8a;
+}
+
+.popular-genre {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #8a8a8a;
+}
+
+.popular__read-button {
+    margin: 5px;
+    background-color: #fff;
+    border: 0.5px solid #d6d5d5;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+}
+
+.popular__favourite-button {
+    margin: 5px;
+    background-color: #fff;
+    color: #8a8a8a;
+    border: 0.5px solid #d6d5d5;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.movie-link {
+    text-decoration: none;
+    color: #8a8a8a;
+}
+
+.popular__read-button:hover {
+    border: 0.5px solid rgb(96, 182, 96);
+    transition: 1s;
+}
+
+.movie-link:hover {
+    color: rgb(96, 182, 96);
+    transition: 0.15s;
+}
+
+.popular-pagination {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
