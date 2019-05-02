@@ -1,0 +1,74 @@
+.Loader {
+    min-width: 100px;
+    width: 950px;
+    padding-right: 40px;
+}
+
+.Loader div {
+    display: flex;
+    flex-direction: column;
+    animation: pulse 0.3s infinite ease-in-out;
+    min-width: 100px;
+}
+
+.Sidebar {
+    height: 100vh;
+}
+
+.loader-title {
+    margin-top: 50px;
+    height: 36px;
+}
+
+.loader-date {
+    height: 14px;
+    margin-top: 15px;
+    width: 200px;
+}
+
+.loader-text {
+    height: 14px;
+    margin-top: 15px;
+}
+
+.loader-author {
+    width: 100px;
+    height: 12px;
+    margin-top: 15px;
+}
+
+.loader-author-li {
+    width: 150px;
+    height: 40px;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.loader-comments-name {
+    height: 14px;
+    max-width: 130px;
+    margin-top: 20px;
+}
+
+.loader-comments-email {
+    height: 14px;
+    max-width: 150px;
+    margin-top: 20px;
+}
+
+.loader-comments-body {
+    height: 11px;
+    margin-top: 15px;
+}
+
+@keyframes pulse {
+    0%{
+        background-color: rgba(165,165,165,.1);
+    }
+    50%{
+        background-color: rgba(165,165,165,.3);
+    }
+    100%{
+        background-color: rgba(165,165,165,.1);
+    }
+}
