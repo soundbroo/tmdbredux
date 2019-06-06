@@ -20,7 +20,6 @@ class Favourite extends Component {
       favId: 0
     };
     this.getFavourites = this.getFavourites.bind(this);
-    this.handleAddFavourite = this.handleAddFavourite.bind(this);
     this.handleRemoveFavourite = this.handleRemoveFavourite.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -52,14 +51,6 @@ class Favourite extends Component {
         sRes: res.map(el => el.data),
         movieTitles: res.map(el => el.data.title)
       });
-    });
-  }
-
-  handleAddFavourite(e) {
-    e.preventDefault();
-    this.setState({ favId: e.target }, () => {
-      localStorage.setItem(this.state.favId.id, this.state.favId.id);
-      this.getFavourites();
     });
   }
 
@@ -118,9 +109,7 @@ class Favourite extends Component {
                   </button>
                   <button
                     onClick={
-                      localStorage.getItem(res.id)
-                        ? this.handleRemoveFavourite
-                        : this.handleAddFavourite
+                      this.handleRemoveFavourite
                     }
                     id={res.id}
                     className="popular__favourite-button"

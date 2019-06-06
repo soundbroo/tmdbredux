@@ -1,67 +1,109 @@
-.Loader {
-    min-width: 100px;
-    width: 950px;
-    padding-right: 40px;
-}
-
-.Loader div {
+.loader {
     display: flex;
     flex-direction: column;
-    animation: pulse 0.3s infinite ease-in-out;
-    min-width: 100px;
+    margin-left: 5px;
 }
 
-.Sidebar {
-    height: 100vh;
+.loader div, h2, p {
 }
 
-.loader-title {
-    margin-top: 50px;
-    height: 36px;
+.loader-card {
+    display: flex;
+    border: 0.5px solid #d6d5d5;
+    border-radius: 10px;
+    padding: 5px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    box-shadow: #d6d5d5 3px 3px 5px 0px;
+}
+
+.image {
+    min-width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    animation: 0.5s anim ease-in-out infinite;
+}
+
+.loader-card__description {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.loader-card__description div, button {
+    animation: 0.5s anim ease-in-out infinite;
+}
+
+.title {
+    min-width: 230px;
+    height: 20px;
+}
+
+.loader-card__description button {
+    outline: none;
 }
 
 .loader-date {
+    margin-bottom: 0;
     height: 14px;
-    margin-top: 15px;
-    width: 200px;
+    min-width: 200px;
+    color: #8a8a8a;
 }
 
-.loader-text {
+.loader-genre {
+    margin-top: 5px;
+    margin-bottom: 0;
+    width: 180px;
+    height: 13px;
+    color: #8a8a8a;
+}
+
+.loader-description {
     height: 14px;
-    margin-top: 15px;
 }
 
-.loader-author {
-    width: 100px;
-    height: 12px;
-    margin-top: 15px;
-}
-
-.loader-author-li {
+.loader__read-button {
+    margin: 5px;
+    background-color: #fff;
+    border: 0.5px solid #d6d5d5;
+    border-radius: 6px;
     width: 150px;
     height: 40px;
-    list-style: none;
-    margin-top: 15px;
 }
 
-.loader-comments-name {
-    height: 14px;
-    max-width: 130px;
-    margin-top: 20px;
+.loader__favourite-button {
+    margin: 5px;
+    background-color: #fff;
+    color: #8a8a8a;
+    border: 0.5px solid #d6d5d5;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
 }
 
-.loader-comments-email {
-    height: 14px;
-    max-width: 150px;
-    margin-top: 20px;
+.loader__movie-link {
+    text-decoration: none;
+    color: #8a8a8a;
 }
 
-.loader-comments-body {
-    height: 11px;
-    margin-top: 15px;
+.loader__read-button:hover {
+    border: 0.5px solid rgb(96, 182, 96);
+    transition: 1s;
 }
 
-@keyframes pulse {
+.loader__movie-link:hover {
+    color: rgb(96, 182, 96);
+    transition: 0.15s;
+}
+
+.loader-pagination {
+    text-align: center;
+}
+
+/*@keyframes anim {
     0%{
         background-color: rgba(165,165,165,.1);
     }
@@ -71,4 +113,4 @@
     100%{
         background-color: rgba(165,165,165,.1);
     }
-}
+}*/

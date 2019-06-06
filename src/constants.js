@@ -3,3 +3,4 @@ export const IS_FAVOURITE = 'IS_FAVOURITE'
 export const SEARCH_MOVIES = 'SEARCH_MOVIES'
 export const CHANGE_PAGE = 'CHANGE_PAGE'
 export const DISABLE_LOADER = 'DISABLE_LOADER'
+/*export const ADD_FAVOURITE = 'ADD_FAVOURITE'*/

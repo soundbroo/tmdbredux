@@ -2,7 +2,7 @@ import {
   GET_POPULAR_MOVIES,
   IS_FAVOURITE,
   CHANGE_PAGE,
-  DISABLE_LOADER,
+  DISABLE_LOADER
 } from '../constants'
 import axios from 'axios'
 
@@ -16,9 +16,9 @@ export const getPopular = (key, lang, currentPage) => async dispatch => {
   const popular = await axios.get(url + currentPage)
   const genre = await axios.get(
     'https://api.themoviedb.org/3/genre/movie/list?api_key=' +
-      key +
-      '&language=' +
-      lang
+    key +
+    '&language=' +
+    lang
   )
 
   dispatch({
@@ -59,3 +59,10 @@ export const changePage = (page, url) => async dispatch => {
     },
   })
 }
+
+/*export const handleAddFavourite = (e) => {
+  return {
+    type: ADD_FAVOURITE,
+    payload: e.target.id
+  }
+}*/

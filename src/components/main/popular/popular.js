@@ -29,18 +29,14 @@ class Popular extends Component {
 
   handleAddFavourite = e => {
     e.preventDefault()
-    this.setState({ favId: e.target }, () => {
-      localStorage.setItem(this.state.favId.id, this.state.favId.id)
-      this.checkFavourite()
-    })
+    localStorage.setItem(e.target.id, e.target.id)
+    this.checkFavourite()
   }
 
   handleRemoveFavourite = e => {
     e.preventDefault()
-    this.setState({ favId: e.target }, () => {
-      localStorage.removeItem(this.state.favId.id, this.state.favId.id)
-      this.checkFavourite()
-    })
+    localStorage.removeItem(e.target.id, e.target.id)
+    this.checkFavourite()
   }
 
   checkFavourite = () => {
@@ -64,21 +60,21 @@ class Popular extends Component {
         {isLoaded == false ? (
           <Loader />
         ) : (
-          <>
-            <PopularComponent
-              popular={popular}
-              genreFunction={this.genreFunction}
-              handleAddFavourite={this.handleAddFavourite}
-              handleRemoveFavourite={this.handleRemoveFavourite}
-            />
-            <Pagination
-              className="popular-pagination"
-              onChange={this.handleChangePage}
-              defaultCurrent={currentPage}
-              total={totalPages * 10}
-            />
-          </>
-        )}
+            <>
+              <PopularComponent
+                popular={popular}
+                genreFunction={this.genreFunction}
+                handleAddFavourite={this.handleAddFavourite}
+                handleRemoveFavourite={this.handleRemoveFavourite}
+              />
+              <Pagination
+                className="popular-pagination"
+                onChange={this.handleChangePage}
+                defaultCurrent={currentPage}
+                total={totalPages * 10}
+              />
+            </>
+          )}
       </>
     )
   }
@@ -94,7 +90,7 @@ const mapDispatchToProps = {
   getPopular,
   isFavourite,
   changePage,
-  isLoadingDisable,
+  isLoadingDisable
 }
 
 export default connect(
