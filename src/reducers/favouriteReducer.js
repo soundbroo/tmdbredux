@@ -8,8 +8,6 @@ const initialState = {
     lang: "ru-RU",
     movies: [],
     sRes: [],
-    totalPages: 0,
-    currentPage: 1,
     search: "",
 }
 

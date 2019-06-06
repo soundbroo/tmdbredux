@@ -13,8 +13,7 @@ export const MovieSimillar = ({ similar, prevSimilar1, nextSimilar1, carousel1, 
                         <div className="similar-movies" ref={carousel1}>
                             {similar.map(el =>
                                 <div><img src={"https://image.tmdb.org/t/p/w185/" + el.backdrop_path} alt={el.title}></img>
-                                    <Link to={`/movie/${el.id}`} className="movie-link">{el.title.substring(0, 23)}...</Link>
-                                    {/* <p onClick={(e) => clickSimilar(e, el.id)}>{el.title.substring(0, 23)}...</p> */}
+                                    <Link to={`/movie/${el.id}`} onClick={(e) => clickSimilar(e, el.id)} className="movie-link">{el.title.substring(0, 23)}...</Link>
                                 </div>
                             )}
                         </div>

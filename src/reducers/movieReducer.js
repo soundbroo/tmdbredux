@@ -9,8 +9,7 @@ const initialState = {
     similar: [],
     recommend: [],
     comments: [],
-    image: [],
-    id: ""
+    image: []
 }
 
 export const movie = (state = initialState, action) => {

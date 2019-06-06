@@ -19,19 +19,9 @@ class Movie extends Component {
     }
 
     componentDidMount() {
-        const { key, lang, id } = this.props.movie
-        this.props.getSimillar(this.props.location.pathname.slice(7))
-        this.props.getMovie(key, lang, id)
+        const { key, lang } = this.props.movie
+        this.props.getMovie(key, lang, this.props.location.pathname.slice(7))
     }
-
-    // shouldComponentUpdate(nextProps) {
-    //     if (nextProps.location.pathname != this.props.location.pathname) {
-    //         const { key, lang } = this.props.movie
-    //         this.props.getSimillar(this.props.location.pathname)
-    //         this.props.getMovie(key, lang)
-    //         return true
-    //     } else return false
-    // }
 
     nextSimilar1 = (e) => {
         e.preventDefault()
@@ -78,8 +68,7 @@ class Movie extends Component {
     clickSimilar = (e, el) => {
         const { key, lang } = this.props.movie
         e.preventDefault()
-        this.props.getSimillar(el)
-        this.props.getMovie(key, lang)
+        this.props.getMovie(key, lang, el)
         window.scrollTo(0, 0)
     }
 
@@ -88,10 +77,10 @@ class Movie extends Component {
         return (
             <div className="movie">
                 <MovieCard movieData={movieData} date={date} currentGenre={currentGenre} />
-                <MovieImages image={image} prevSimilar3={this.prevSimilar3} nextSimilar3={this.nextSimilar3} carousel3={this.carousel3} />
-                <MovieSimillar similar={similar} prevSimilar1={this.prevSimilar1} nextSimilar1={this.nextSimilar1} carousel1={this.carousel1} clickSimilar={this.clickSimilar} />
+                {/* <MovieImages image={image} prevSimilar3={this.prevSimilar3} nextSimilar3={this.nextSimilar3} carousel3={this.carousel3} /> */}
+                {/* <MovieSimillar similar={similar} prevSimilar1={this.prevSimilar1} nextSimilar1={this.nextSimilar1} carousel1={this.carousel1} clickSimilar={this.clickSimilar} /> */}
                 <MovieOverview comments={comments} />
-                <MovieRecommend recommend={recommend} prevSimilar2={this.prevSimilar2} nextSimilar2={this.nextSimilar2} carousel2={this.carousel2} clickSimilar={this.clickSimilar} />
+                {/* <MovieRecommend recommend={recommend} prevSimilar2={this.prevSimilar2} nextSimilar2={this.nextSimilar2} carousel2={this.carousel2} clickSimilar={this.clickSimilar} /> */}
             </div>
         )
     }

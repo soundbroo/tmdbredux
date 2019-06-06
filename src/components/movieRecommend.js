@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Prev from '../img/prev.png'
 import Next from '../img/next.png'
 
@@ -11,7 +12,7 @@ export const MovieRecommend = ({ recommend, prevSimilar2, nextSimilar2, carousel
                 <div className="similar-movies" ref={carousel2}>
                     {recommend.map(el =>
                         <div><img src={"https://image.tmdb.org/t/p/w185/" + el.backdrop_path} alt={el.title}></img>
-                            <p onClick={(e) => clickSimilar(e, el.id)}>{el.title.substring(0, 23)}...</p>
+                            <Link to={`/movie/${el.id}`} onClick={(e) => clickSimilar(e, el.id)} className="movie-link">{el.title.substring(0, 23)}...</Link>
                         </div>
                     )}
                 </div>

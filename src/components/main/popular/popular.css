@@ -2,7 +2,17 @@
     display: flex;
     flex-direction: column;
     margin-left: 5px;
+    margin-bottom: 5px;
+    height: 95vh;
+    overflow-y: scroll;
+    border: 0.5px solid rgb(233, 228, 228);
+    border-radius: 10px;
 }
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: rgba(255, 255, 255, 0.0);
+  }
 
 .popular-card {
     display: flex;
@@ -79,5 +89,7 @@ img {
 
 .popular-pagination {
     text-align: center;
+    position: sticky;
+    bottom: 5px;
 }
 

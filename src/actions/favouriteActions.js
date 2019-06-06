@@ -1,11 +1,18 @@
 import axios from "axios";
 import { GET_FAVOURITES_MOVIES } from '../constants'
 
-export const getFavourites = (key, lang) => dispatch => {
-    const a = [];
-    for (var i = 0; i < localStorage.length; i++) {
-        a.push(localStorage.key(i));
+export const getFavourites = (key, lang, page, pageSize) => dispatch => {
+    const a = []
+    if (page * pageSize < localStorage.length) {
+        for (var i = page * pageSize - pageSize; i < page * pageSize; i++) {
+            a.push(localStorage.key(i));
+        }
+    } else {
+        for (var i = page * pageSize - pageSize; i < localStorage.length; i++) {
+            a.push(localStorage.key(i));
+        }
     }
+
     const url = a.map(
         el =>
             "https://api.themoviedb.org/3/movie/" + el + "?api_key=" + key + "&language=" + lang

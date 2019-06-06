@@ -11,7 +11,7 @@ const Main = () => {
       <Switch>
         <Route exact path="/popular" component={Popular} />
         <Route exact path="/favourite" component={Favourite} />
-        <Route path="/movie/" component={Movie} />
+        <Route path="/movie" component={Movie} />
       </Switch>
     </div>
   )
