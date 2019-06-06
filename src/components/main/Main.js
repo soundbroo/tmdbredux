@@ -3,9 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import './Main.css'
 import Popular from './popular/popular'
 import Favourite from './favourite/favourite'
-//import Popular from '../Popular'
-//import Movie from '../Movie'
-//import Favourite from '../Favourite'
+import Movie from '../Movie'
 
 const Main = () => {
   return (
@@ -13,6 +11,7 @@ const Main = () => {
       <Switch>
         <Route exact path="/popular" component={Popular} />
         <Route exact path="/favourite" component={Favourite} />
+        <Route path="/movie/" component={Movie} />
       </Switch>
     </div>
   )

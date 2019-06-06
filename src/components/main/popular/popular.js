@@ -13,7 +13,7 @@ import { PopularComponent } from './popularComponent'
 import 'antd/dist/antd.css'
 
 class Popular extends Component {
-  async componentDidMount() {
+  componentDidMount() {
     const { key, lang, currentPage } = this.props.popular
     this.props.getPopular(key, lang, currentPage)
     this.checkFavourite()
@@ -43,7 +43,6 @@ class Popular extends Component {
     const { popular } = this.props.popular
     const arr = popular.map(res => res.id)
     const favourite = arr.filter(el => el == localStorage.getItem(el))
-    console.log(favourite)
     this.props.isFavourite(favourite)
   }
 

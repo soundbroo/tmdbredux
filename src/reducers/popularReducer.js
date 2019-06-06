@@ -12,7 +12,6 @@ const initialState = {
   popular: [],
   totalPages: 0,
   currentPage: 1,
-  search: '',
   url: '',
   genre: [],
   favId: 0,
