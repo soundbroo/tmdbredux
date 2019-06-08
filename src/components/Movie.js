@@ -77,10 +77,10 @@ class Movie extends Component {
         return (
             <div className="movie">
                 <MovieCard movieData={movieData} date={date} currentGenre={currentGenre} />
-                {/* <MovieImages image={image} prevSimilar3={this.prevSimilar3} nextSimilar3={this.nextSimilar3} carousel3={this.carousel3} /> */}
-                {/* <MovieSimillar similar={similar} prevSimilar1={this.prevSimilar1} nextSimilar1={this.nextSimilar1} carousel1={this.carousel1} clickSimilar={this.clickSimilar} /> */}
+                <MovieImages image={image} prevSimilar3={this.prevSimilar3} nextSimilar3={this.nextSimilar3} carousel3={this.carousel3} />
+                <MovieSimillar similar={similar} prevSimilar1={this.prevSimilar1} nextSimilar1={this.nextSimilar1} carousel1={this.carousel1} clickSimilar={this.clickSimilar} />
                 <MovieOverview comments={comments} />
-                {/* <MovieRecommend recommend={recommend} prevSimilar2={this.prevSimilar2} nextSimilar2={this.nextSimilar2} carousel2={this.carousel2} clickSimilar={this.clickSimilar} /> */}
+                <MovieRecommend recommend={recommend} prevSimilar2={this.prevSimilar2} nextSimilar2={this.nextSimilar2} carousel2={this.carousel2} clickSimilar={this.clickSimilar} />
             </div>
         )
     }
