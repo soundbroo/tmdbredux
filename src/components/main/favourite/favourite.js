@@ -24,10 +24,7 @@ class Favourite extends Component {
   handleChangePage = (page, pageSize) => {
     const { key, lang } = this.props.favourite
     this.props.getFavourites(key, lang, page, pageSize)
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
+    window.scrollTo(0, 0)
   }
 
   render() {
@@ -37,6 +34,7 @@ class Favourite extends Component {
         <Pagination
           className="popular-pagination"
           onChange={this.handleChangePage}
+          // onShowSizeChange={}
           defaultCurrent={1}
           pageSize={10}
           total={localStorage.length}
