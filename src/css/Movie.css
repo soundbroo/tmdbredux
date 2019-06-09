@@ -1,12 +1,13 @@
 .movie {
     display: flex;
     flex-direction: column;
-    margin-left: 5px;
+    width: 98%;
+
 }
 
 h2 {
     margin-bottom: 0;
-    color: rgb(96, 182, 96);
+    color: #fff;
 }
 
 p {
@@ -36,11 +37,7 @@ p {
 .movie-card {
     text-align: justify;
     display: flex;
-    width: 98%;
-    border: 0.5px solid #d6d5d5;
-    border-radius: 10px;
     padding: 5px;
-    box-shadow: #d6d5d5 3px 3px 5px 0px;
     flex-wrap: nowrap;
 }
 
@@ -55,10 +52,7 @@ p {
 .similar {
     display: flex;
     align-items: center;
-    padding: 10px 40px;
-    border: 0.5px solid #d6d5d5;
-    border-radius: 10px;
-    box-shadow: #d6d5d5 3px 3px 5px 0px;
+    padding: 10px 30px;
 }
 
 .similar-link {
@@ -68,13 +62,12 @@ p {
 
 .similar-movies {
     display: flex;
-    transition: 0.5s;
     overflow: hidden;
     text-align: center;
 }
 
 .similar-movies img {
-    width: 200px;
+    width: 230px;
     padding: 1.5px;
 }
 
@@ -94,5 +87,4 @@ p {
 
 .next-button {
     margin-right: -38px;
-    /* margin-top: 30px; */
 }

@@ -6,21 +6,30 @@ import { getFavourites } from "../../../actions/favouriteActions";
 import "./Search.css";
 
 class Search extends React.Component {
+
+  constructor() {
+    super()
+    this.state = {
+      currentPage: 1,
+      currentPageSize: 10
+    }
+  }
+
   handleSearch = e => {
     e.preventDefault();
     const { api_key, lang, currentPage, searchMovies, getPopular, sRes, searchFav, getFavourites } = this.props
     if (window.location.href.includes("/popular")) {
-      if (e.target.value !== "") {
+      if (e.target.value != "") {
         searchMovies(e.target.value, api_key, lang)
       } else {
         getPopular(api_key, lang, currentPage)
       }
     } else
       if (window.location.href.includes("/favourite")) {
-        if (e.target.value !== "") {
+        if (e.target.value != "") {
           searchFav(e.target.value, sRes)
         } else {
-          getFavourites(api_key, lang)
+          getFavourites(api_key, lang, this.state.currentPage, this.state.currentPageSize)
         }
       }
 

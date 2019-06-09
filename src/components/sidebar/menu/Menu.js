@@ -4,11 +4,9 @@ import "./Menu.css";
 
 export const Menu = () => (
   <>
-    <Link className="menu-item" to="/popular">
-      Популярные
-    </Link>
-    <Link className="menu-item" to="/favourite">
-      Избранные
-    </Link>
+    <hr color='#333333' />
+    <Link className="menu-item" to="/popular">Популярные</Link>
+    <hr color='#333333' />
+    <Link className="menu-item" to="/favourite">Избранные</Link>
   </>
 );

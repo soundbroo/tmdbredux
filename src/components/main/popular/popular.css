@@ -1,12 +1,9 @@
 .popular {
     display: flex;
     flex-direction: column;
-    margin-left: 5px;
     margin-bottom: 5px;
     height: 95vh;
     overflow-y: scroll;
-    border: 0.5px solid rgb(233, 228, 228);
-    border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -16,12 +13,9 @@
 
 .popular-card {
     display: flex;
-    border: 0.5px solid #d6d5d5;
-    border-radius: 10px;
     padding: 5px;
     padding-right: 20px;
     margin-bottom: 10px;
-    box-shadow: #d6d5d5 3px 3px 5px 0px;
 }
 
 .popular-card__description {
@@ -34,10 +28,6 @@
 
 .popular-card__description button {
     outline: none;
-}
-
-img {
-    border-radius: 10px;
 }
 
 .popular-date {
@@ -54,19 +44,17 @@ img {
 
 .popular__read-button {
     margin: 5px;
-    background-color: #fff;
-    border: 0.5px solid #d6d5d5;
-    border-radius: 6px;
+    background-color: #121212;
+    border: none;
     width: 150px;
     height: 40px;
 }
 
 .popular__favourite-button {
     margin: 5px;
-    background-color: #fff;
-    color: #8a8a8a;
-    border: 0.5px solid #d6d5d5;
-    border-radius: 6px;
+    background-color: #121212;
+    color: #FF0000;
+    border: none;
     width: 150px;
     height: 40px;
     cursor: pointer;
@@ -74,16 +62,16 @@ img {
 
 .movie-link {
     text-decoration: none;
-    color: #8a8a8a;
+    color: #999999;
 }
 
-.popular__read-button:hover {
-    border: 0.5px solid rgb(96, 182, 96);
-    transition: 1s;
+.popular__read-button:hover, .popular__favourite-button:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
 }
 
 .movie-link:hover {
-    color: rgb(96, 182, 96);
+    color: #b6b5b5;
     transition: 0.15s;
 }
 
@@ -93,3 +81,15 @@ img {
     bottom: 5px;
 }
 
+.popular-pagination li {
+    background-color: #1c1c1c;
+    border: none;
+}
+
+.popular-pagination li a {
+    color: #fff;
+}
+
+.popular-pagination li:hover {
+    text-decoration: none;
+}

@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Prev from '../img/prev.png'
-import Next from '../img/next.png'
+import { Icon } from 'antd'
 
 export const MovieRecommend = ({ recommend, prevSimilar2, nextSimilar2, carousel2, clickSimilar }) => {
     return (
         <>
             <h2>Рекоммендуем</h2>
             <div className="similar">
-                <img onClick={prevSimilar2} src={Prev} className="similar-button prev-button" alt="prev"></img>
+                <Icon onClick={prevSimilar2} type="left" className="similar-button prev-button" alt="prev" />
                 <div className="similar-movies" ref={carousel2}>
                     {recommend.map(el =>
                         <div><img src={"https://image.tmdb.org/t/p/w185/" + el.backdrop_path} alt={el.title}></img>
@@ -16,7 +15,7 @@ export const MovieRecommend = ({ recommend, prevSimilar2, nextSimilar2, carousel
                         </div>
                     )}
                 </div>
-                <img onClick={nextSimilar2} src={Next} className="similar-button next-button" alt="next"></img>
+                <Icon onClick={nextSimilar2} type="right" className="similar-button next-button" alt="next" />
             </div>
         </>
     )

@@ -1,7 +1,7 @@
+@import '~antd/dist/antd.css';
+
 .app-container {
   display: flex;
-  margin: 5px;
-  border: 0.5px solid rgb(233, 228, 228);
-  border-radius: 10px;
-  /* box-shadow: #d6d5d5 5px 10px 15px 3px; */
+  background-color: #121212;
+  color: #fff;
 }

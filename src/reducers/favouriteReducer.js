@@ -9,6 +9,8 @@ const initialState = {
     movies: [],
     sRes: [],
     search: "",
+    currentPage: 1,
+    currentPageSize: 10
 }
 
 export const favourite = (state = initialState, action) => {

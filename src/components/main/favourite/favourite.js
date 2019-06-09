@@ -6,6 +6,13 @@ import { getFavourites } from '../../../actions/favouriteActions'
 import { Pagination } from 'antd'
 
 class Favourite extends Component {
+  constructor() {
+    super()
+    this.state = {
+      currentPage: 1,
+      currentPageSize: 10
+    }
+  }
 
   componentDidMount() {
     const { key, lang } = this.props.favourite
@@ -18,13 +25,24 @@ class Favourite extends Component {
     const { key, lang } = this.props.favourite
     e.preventDefault();
     localStorage.removeItem(e.target.id, e.target.id);
-    this.props.getFavourites(key, lang);
+    this.props.getFavourites(key, lang, this.state.currentPage, this.state.currentPageSize);
   }
 
   handleChangePage = (page, pageSize) => {
+    this.setState({ currentPage: page })
     const { key, lang } = this.props.favourite
     this.props.getFavourites(key, lang, page, pageSize)
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
+  }
+
+  itemRender = (current, type, originalElement) => {
+    if (type === 'prev') {
+      return <a>Назад</a>;
+    }
+    if (type === 'next') {
+      return <a>Вперед</a>;
+    }
+    return originalElement;
   }
 
   render() {
@@ -32,9 +50,9 @@ class Favourite extends Component {
       <>
         <FavouriteComponent movies={this.props.favourite.movies} handleRemoveFavourite={this.handleRemoveFavourite} />
         <Pagination
+          itemRender={this.itemRender}
           className="popular-pagination"
           onChange={this.handleChangePage}
-          // onShowSizeChange={}
           defaultCurrent={1}
           pageSize={10}
           total={localStorage.length}

@@ -52,6 +52,16 @@ class Popular extends Component {
       .map(el => <span>{el.name}; </span>)
   }
 
+  itemRender = (current, type, originalElement) => {
+    if (type === 'prev') {
+      return <a>Назад</a>;
+    }
+    if (type === 'next') {
+      return <a>Вперед</a>;
+    }
+    return originalElement;
+  }
+
   render() {
     const { popular, currentPage, totalPages, isLoaded } = this.props.popular
     return (
@@ -67,6 +77,7 @@ class Popular extends Component {
                 handleRemoveFavourite={this.handleRemoveFavourite}
               />
               <Pagination
+                itemRender={this.itemRender}
                 className="popular-pagination"
                 onChange={this.handleChangePage}
                 defaultCurrent={currentPage}
