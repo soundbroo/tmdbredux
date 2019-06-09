@@ -1,4 +1,4 @@
-# React movie-search app powerd by The Movie Database API
+# React movie-search app powered by The Movie Database API
 Using:
   npm i
   npm start
