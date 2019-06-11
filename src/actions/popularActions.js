@@ -59,10 +59,3 @@ export const changePage = (page, url) => async dispatch => {
     },
   })
 }
-
-/*export const handleAddFavourite = (e) => {
-  return {
-    type: ADD_FAVOURITE,
-    payload: e.target.id
-  }
-}*/

@@ -3,7 +3,7 @@ import {
   DISABLE_LOADER,
   IS_FAVOURITE,
   SEARCH_MOVIES,
-  CHANGE_PAGE,
+  CHANGE_PAGE
 } from '../constants'
 
 const initialState = {
@@ -35,6 +35,7 @@ export const popular = (state = initialState, action) => {
     case DISABLE_LOADER: {
       return { ...state, isLoaded: false }
     }
+
     case IS_FAVOURITE: {
       return { ...state, isFavourite: action.payload.favourite }
     }

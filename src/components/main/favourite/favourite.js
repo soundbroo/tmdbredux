@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./favourite.css";
+import { Loader } from '../../Loader'
 import { FavouriteComponent } from "./favouriteComponent";
 import { connect } from 'react-redux'
-import { getFavourites } from '../../../actions/favouriteActions'
+import { getFavourites, isLoadingFinished } from '../../../actions/favouriteActions'
+import { isLoadingDisable } from '../../../actions/popularActions'
 import { Pagination } from 'antd'
 
 class Favourite extends Component {
@@ -29,6 +31,7 @@ class Favourite extends Component {
   }
 
   handleChangePage = (page, pageSize) => {
+    this.props.isLoadingFinished()
     this.setState({ currentPage: page })
     const { key, lang } = this.props.favourite
     this.props.getFavourites(key, lang, page, pageSize)
@@ -48,15 +51,16 @@ class Favourite extends Component {
   render() {
     return (
       <>
-        <FavouriteComponent movies={this.props.favourite.movies} handleRemoveFavourite={this.handleRemoveFavourite} />
-        <Pagination
-          itemRender={this.itemRender}
-          className="popular-pagination"
-          onChange={this.handleChangePage}
-          defaultCurrent={1}
-          pageSize={10}
-          total={localStorage.length}
-        />
+        {this.props.favourite.isLoaded == false ? (<Loader />) :
+          <><FavouriteComponent movies={this.props.favourite.movies} handleRemoveFavourite={this.handleRemoveFavourite} />
+            <Pagination
+              itemRender={this.itemRender}
+              className="popular-pagination"
+              onChange={this.handleChangePage}
+              defaultCurrent={1}
+              pageSize={10}
+              total={localStorage.length}
+            /></>}
       </>
     )
   }
@@ -69,7 +73,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  getFavourites
+  getFavourites,
+  isLoadingDisable,
+  isLoadingFinished
 }
 
 

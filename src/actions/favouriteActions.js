@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_FAVOURITES_MOVIES } from '../constants'
+import { GET_FAVOURITES_MOVIES, ENABLE_LOADER } from '../constants'
 
 export const getFavourites = (key, lang, page, pageSize) => dispatch => {
     const a = []
@@ -24,9 +24,17 @@ export const getFavourites = (key, lang, page, pageSize) => dispatch => {
             type: GET_FAVOURITES_MOVIES,
             payload: {
                 movies: result.map(el => el.data),
-                sRes: result.map(el => el.data)
+                sRes: result.map(el => el.data),
+                isLoaded: true
             }
         })
     });
 
+}
+
+export const isLoadingFinished = () => {
+    return {
+        type: ENABLE_LOADER,
+        payload: false
+    }
 }
