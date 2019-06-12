@@ -16,3 +16,14 @@ hr {
   width: 162px;
   margin: 0;
 }
+
+.genres {
+  padding-left: 5px;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+}
+
+.genres input {
+  margin-left: 2px;
+}

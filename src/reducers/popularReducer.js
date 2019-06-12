@@ -3,7 +3,8 @@ import {
   DISABLE_LOADER,
   IS_FAVOURITE,
   SEARCH_MOVIES,
-  CHANGE_PAGE
+  CHANGE_PAGE,
+  ADD_GENRE
 } from '../constants'
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   currentPage: 1,
   url: '',
   genre: [],
+  checked: [],
   favId: 0,
   isFavourite: null,
   isLoaded: false,
@@ -56,6 +58,9 @@ export const popular = (state = initialState, action) => {
         currentPage: action.payload.currentPage,
         isLoaded: action.payload.isLoaded,
       }
+    }
+    case ADD_GENRE: {
+      return { ...state, checked: action.payload }
     }
     default:
       return state

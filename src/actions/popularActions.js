@@ -2,7 +2,8 @@ import {
   GET_POPULAR_MOVIES,
   IS_FAVOURITE,
   CHANGE_PAGE,
-  DISABLE_LOADER
+  DISABLE_LOADER,
+  ADD_GENRE
 } from '../constants'
 import axios from 'axios'
 
@@ -57,5 +58,12 @@ export const changePage = (page, url) => async dispatch => {
       currentPage: requestResult.data.page,
       isLoaded: true,
     },
+  })
+}
+
+export const addGenre = (arr) => dispatch => {
+  dispatch({
+    type: ADD_GENRE,
+    payload: arr
   })
 }
