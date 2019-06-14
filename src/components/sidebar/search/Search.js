@@ -17,10 +17,10 @@ class Search extends React.Component {
 
   handleSearch = e => {
     e.preventDefault();
-    const { api_key, lang, currentPage, searchMovies, getPopular, sRes, searchFav, getFavourites } = this.props
+    const { api_key, lang, currentPage, searchMovies, getPopular, sRes, searchFav, getFavourites, checked, page } = this.props
     if (window.location.href.includes("/popular")) {
       if (e.target.value != "") {
-        searchMovies(e.target.value, api_key, lang)
+        searchMovies(e.target.value, api_key, lang, page, checked)
       } else {
         getPopular(api_key, lang, currentPage)
       }
@@ -32,11 +32,11 @@ class Search extends React.Component {
           getFavourites(api_key, lang, this.state.currentPage, this.state.currentPageSize)
         }
       }
-
   };
   render() {
     return (
       <input
+        disabled={this.props.checkedBool}
         onChange={this.handleSearch}
         type="text"
         className="search"
@@ -48,6 +48,8 @@ class Search extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    checked: state.popular.checked,
+    checkedBool: state.popular.checkedBool,
     api_key: state.popular.key,
     lang: state.popular.lang,
     currentPage: state.popular.currentPage,

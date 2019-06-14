@@ -3,7 +3,9 @@ import {
   IS_FAVOURITE,
   CHANGE_PAGE,
   DISABLE_LOADER,
-  ADD_GENRE
+  ADD_GENRE,
+  EMPTY_GENRE,
+  CHANGE_HREF
 } from '../constants'
 import axios from 'axios'
 
@@ -62,8 +64,31 @@ export const changePage = (page, url) => async dispatch => {
 }
 
 export const addGenre = (arr) => dispatch => {
-  dispatch({
-    type: ADD_GENRE,
-    payload: arr
-  })
+  if (arr.length != 0) {
+    dispatch({
+      type: ADD_GENRE,
+      payload: {
+        arr: arr,
+        checkedBool: true
+      }
+    })
+  } else {
+    dispatch({
+      type: EMPTY_GENRE,
+      payload: {
+        arr: arr,
+        checkedBool: false
+      }
+    })
+  }
+}
+
+export const changeHref = (href, check) => {
+  return {
+    type: CHANGE_HREF,
+    payload: {
+      href: href,
+      checked: check
+    }
+  }
 }

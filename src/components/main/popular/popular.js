@@ -9,6 +9,7 @@ import {
   changePage,
   isLoadingDisable,
 } from '../../../actions/popularActions'
+import { searchMovies } from '../../../actions/searchActions'
 import { PopularComponent } from './popularComponent'
 import 'antd/dist/antd.css'
 
@@ -21,8 +22,12 @@ class Popular extends Component {
 
   handleChangePage = page => {
     this.props.isLoadingDisable()
-    const { url } = this.props.popular
-    this.props.changePage(page, url)
+    const { url, key, lang, checked } = this.props.popular
+    if (this.props.popular.checked.length == 0) {
+      this.props.changePage(page, url)
+    } else {
+      this.props.searchMovies('', key, lang, page, checked)
+    }
     this.checkFavourite()
     window.scrollTo(0, 0)
   }
@@ -100,7 +105,8 @@ const mapDispatchToProps = {
   getPopular,
   isFavourite,
   changePage,
-  isLoadingDisable
+  isLoadingDisable,
+  searchMovies
 }
 
 export default connect(
